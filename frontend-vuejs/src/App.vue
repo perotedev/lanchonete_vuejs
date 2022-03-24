@@ -1,6 +1,9 @@
 <template>
-  <div class="m-0 p-0">
+  <div class="m-0 p-0 bg-project">
     <SliderTop/>
+
+    <h1>TESTANDO FUNDO</h1>
+    <h2 class="bg-card-product" >TESTE SEGUND</h2>
   </div>
 </template>
 
@@ -14,13 +17,3 @@ export default {
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-</style>

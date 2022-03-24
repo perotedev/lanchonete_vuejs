@@ -1,0 +1,23 @@
+#app {
+    background-color: #232227;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: white;
+      
+}
+
+.bg-card-product {
+    background-color: #323136;
+    border-radius: 5px;
+}
+
+.btn-yellow {
+    background-color: #FFBC00;
+}
+
+.btn-yellow-selected {
+    background-color: white;
+}
+
