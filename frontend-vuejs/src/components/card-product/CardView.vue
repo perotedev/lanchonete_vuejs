@@ -5,13 +5,11 @@
         <img class="img-card" :src="imgProduct" :alt="titleProduct"/>
       </div>
 
-      <div class="col-8 text-start">
+      <div class="col-9 text-start">
         <p class="p-0 m-0 f-title">{{ titleProduct }}</p>
         <p class="p-0 m-0 mt-1">{{ descriptionProduct }}</p>
         <PriceProduct  :price="price" :promotion="promotion"/>
       </div>
-
-      <div class="col"></div>
     </div>
     <div class="align-self-end p-0 m-0">
       <div class="btn-yellow btn-select">

@@ -3,11 +3,11 @@
     <SliderTop />
 
     <div class="row mt-4">
-      <div class="col-2">
+      <div class="col-12 col-lg-2">
 
       </div>
 
-      <div class="col-9">
+      <div class="col-12 col-lg-9">
         <ProductList />
       </div>
 
