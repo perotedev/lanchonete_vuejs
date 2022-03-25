@@ -1,10 +1,13 @@
 <template>
-  <div></div>
+  <div class="price mt-2 rad-10">
+    <p class="p-0 m-0 f-title text-warning">R$ {{ price }} </p>
+
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Test",
+  name: "PriceProduct",
   props: {
     price: Number,
     promotion: Boolean
@@ -13,11 +16,6 @@ export default {
   data() {
     return {};
   },
-  props: {},
   methods: {},
 };
 </script>
-
-<style scoped>
-
-</style>
