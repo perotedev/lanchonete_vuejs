@@ -14,7 +14,6 @@
       </div>
     </div>
   </section>
-  <h1>Teste</h1>
 </template>
 
 <script>

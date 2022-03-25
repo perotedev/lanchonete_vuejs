@@ -1,12 +1,9 @@
 <template>
-  <div class="m-0 p-0 bg-project">
+  <div class="bg-project">
     <SliderTop />
 
-
-    <h1>TESTANDO SCOPED</h1>
-
-    <div class="row">
-      <div class="col-3">
+    <div class="row mt-4">
+      <div class="col-2">
 
       </div>
 
@@ -14,6 +11,7 @@
         <ProductList />
       </div>
 
+    <div class="col"></div>
     </div>
   </div>
 
@@ -31,9 +29,3 @@
     },
   };
 </script>
-
-<style scoped>
-h1{
-  color: yellow;
-}
-</style>

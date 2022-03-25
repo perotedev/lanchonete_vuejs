@@ -2,19 +2,19 @@
   <div>
     <div class="row px-4">
       <div class="col-6" v-for="(element, index) in list" :key="index">
-        <CardList />
+        <CardView />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import CardList from '@/components/CardList'
+import CardView from '@/components/card-product/CardView'
 
 export default {
   name: "ProductList",
   components: {
-    CardList
+    CardView
   },
   created() {},
   data() {
@@ -28,5 +28,8 @@ export default {
 </script>
 
 <style scoped>
-
-</style>
+#product-list {
+  margin: 0;
+  padding: 0;
+}
+</style>x

@@ -1,22 +1,30 @@
+@import url('./assets/fonts/fonts.css');
+
 html{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
+html body{
+    font-family: "Segoe UI Regular", Regular, Arial, sans-serif;
+    font-size: 15px;
+}
+
 #app {
     background-color: #232227;
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: white;
-      
+    color: white;      
+}
+
+.f-title {
+    font-family: "Segoe UI Bold", Regular, Arial, sans-serif;
+    font-size: 15px;
 }
 
 .bg-card-product {
     background-color: #323136;
-    border-radius: 5px;
+    box-shadow: black 0px 5px 1px;
 }
 
 .btn-yellow {
@@ -27,3 +35,14 @@ html{
     background-color: white;
 }
 
+.rad-5 {
+    border-radius: 5px;
+}
+
+.rad-8 {
+    border-radius: 8px;
+}
+
+.rad-10 {
+    border-radius: 10px;
+}
