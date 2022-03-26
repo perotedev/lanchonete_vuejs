@@ -1,6 +1,7 @@
 <template>
   <div class="price mt-2 rad-10">
-    <p class="p-0 m-0 f-title text-warning">R$ {{ price }} </p>
+    <p v-if="promotion" class="p-0 m-0 f-title text-danger">R$ {{ price }} </p>
+    <p v-else class="p-0 m-0 f-title text-warning">R$ {{ price }} </p>
 
   </div>
 </template>
