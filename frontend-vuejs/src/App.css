@@ -8,7 +8,7 @@ html{
 
 html body{
     font-family: "Segoe UI Regular", Regular, Arial, sans-serif;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 #app {
@@ -53,4 +53,8 @@ html body{
 
 .rad-10 {
     border-radius: 10px;
+}
+
+.rad-12 {
+    border-radius: 12px;
 }
