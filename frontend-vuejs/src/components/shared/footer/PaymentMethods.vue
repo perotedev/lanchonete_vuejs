@@ -8,7 +8,7 @@
       
       <div class="col-2"></div>
       <div class="col-12 col-lg-8 d-flex">
-        <img class="w-100" :src="imgPaymentsRef" alt="Formas de Pagamento">
+        <img :src="imgPaymentsRef" alt="Formas de Pagamento">
         <img :src="imgBarCodeRef" alt="Código de Barras">
       </div>
       
@@ -35,5 +35,6 @@ export default {
 <style scoped>
 img {
   max-height: 48px;
+  max-width: 329px;
 }
 </style>

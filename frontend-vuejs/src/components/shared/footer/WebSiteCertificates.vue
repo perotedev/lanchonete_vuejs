@@ -3,8 +3,8 @@
     <div class="row align-items-center">     
       <div class="col-2"></div>
       <div class="col-12 col-lg-8 d-flex mt-4">
-        <img class="w-100" :src="imgCertificatesRef" alt="Formas de Pagamento">
-        <img class="ms-1" :src="imgArmoredSiteRef" alt="Código de Barras">
+        <img :src="imgCertificatesRef" alt="Site Blindado">
+        <img class="ms-1" :src="imgArmoredSiteRef" alt="Certificados de Segurança">
       </div>
       
       <div class="col"></div>

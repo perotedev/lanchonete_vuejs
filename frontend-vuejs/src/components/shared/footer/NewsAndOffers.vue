@@ -2,29 +2,30 @@
   <div>
     <div class="row">
       <div class="col-12 col-lg-6 font-bold mb-3">
-        <div class="row align-items-center pt-3">
-          <div class="col"></div>
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-2"></div>
 
-          <div class="col-12 col-lg-4 text-start">
+          <div class="col-12 col-lg-10 text-start">
             <p>Novidades, ofertas e mais </p>
           </div>
 
-          <div class="col-12 col-lg-4">
-            <img class="w-100" :src="imgSocialMediaRef" alt="Mídias Sociais">
+          <div class="col-12 col-lg-2"></div>
+          <div class="col-12 col-lg-8 text-start">
+            <img :src="imgSocialMediaRef" alt="Mídias Sociais">
           </div>
-          
-          <div class="col"></div>
         </div>
 
       </div>
 
       <div class="col-12 col-lg-6">
         <div class="row align-items-center">
-          <div class="col-12 col-lg-4 text-start font-bold">
+          <div class="col-12 col-lg-2"></div>
+          <div class="col-12 col-lg-10 text-start font-bold">
             <p>Ofertas exclusivas para você </p>
           </div>
           
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-lg-2"></div>
+          <div class="col-12 col-lg-8">
             <form>
               <div class="input-group mb-3 pt-3">
                 <input type="text" class="form-control" :placeholder="emailPlaceHolder">
@@ -37,13 +38,18 @@
         </div>
       </div>
     </div>
+    <ToastMessage ref="appToast"/>
   </div>
 </template>
 
 <script>
+import ToastMessage from '@/components/shared/ToastMessage'
+
 export default {
   name: "NewAndOffers",
-  created() {},
+  components: {
+    ToastMessage
+  },
   data() {
     return {
       imgSocialMediaRef: "../../img/footer/social-media@2x.png",
@@ -54,7 +60,11 @@ export default {
   methods: {
     sumbitForm(e){
       e.preventDefault();
-      console.log("Enviou o email");
+      this.$refs.appToast.setToastMessage(
+        "Olá, tudo bem?",
+        "Seu email foi cadastrado com sucesso para receber ofertas exclusivas."
+      );
+      this.$refs.appToast.showToast();
     }
   },
 };
@@ -74,6 +84,8 @@ button:hover{
 
 img {
   cursor: pointer;
+  max-height: 48px;
+  max-width: 329px;
 }
 
 .form-control {

@@ -19,7 +19,6 @@
 
     <AppFooter class="mt-4"/>
   </div>
-
 </template>
 
 <script>
@@ -36,5 +35,6 @@
       LeftBar,
       AppFooter
     },
+    methods: {}
   };
 </script>
