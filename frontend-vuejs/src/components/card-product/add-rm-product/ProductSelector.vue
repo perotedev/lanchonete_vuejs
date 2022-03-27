@@ -5,15 +5,15 @@
 
       <div class="">
         <div v-if="showBtnMinus" class="d-flex">
-          <div class="btn-yellow btn-select-minus" :title="rm">
-            <p class="fs-2 btn-minus dis-text-select">-</p>
+          <div class="btn-yellow btn-select-minus d-flex justify-content-center align-items-center" :title="rm">
+            <p class="fs-4 btn-minus dis-text-select">-</p>
           </div>
           <div class="btn-yellow btn-select-plus2" :title="add">
-            <p class="fs-4 btn-plus dis-text-select">+</p>
+            <i class="bi bi-plus btn-plus fs-5"></i>
           </div>
         </div>
         <div v-else class="btn-yellow btn-select-plus" :title="add">
-            <p class="fs-4 btn-plus dis-text-select">+</p>
+          <i class="bi bi-plus btn-plus fs-5"></i>
         </div>
       </div>
     </div>
@@ -46,13 +46,13 @@ export default {
 .btn-minus {
   color: #232227;
   position: relative;
-  top: -15px;
+  bottom: 2px;
 }
 
 .btn-plus {
   color: #232227;
   position: relative;
-  top: -9px;
+  top: -3px;
 }
 
 .btn-select-minus {
