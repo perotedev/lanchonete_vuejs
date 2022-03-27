@@ -2,11 +2,11 @@
   <div>
     <div class="row w-100">
       <div class="col-12 col-lg-1"></div>
-      <div class="col-12 col-lg-3 mb-3">
+      <div class="col-12 col-lg-3 mb-2">
         <SearchBox />
       </div>
       
-      <div class="col-12 col-lg-7">
+      <div class="col-12 col-lg-7 mb-2">
         <NavBarMenu :menuItems="menuBurger[typeProduct]"/>
       </div>
       <div class="col-12 col-lg-1"></div>

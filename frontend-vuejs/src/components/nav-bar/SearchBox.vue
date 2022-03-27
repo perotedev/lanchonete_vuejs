@@ -5,8 +5,8 @@
         <p><span class="f-title">Você pode pesquisar</span> <br>todos os produtos </p>
       </div>
       <div id="box-search" class="text-end fade-in d-flex justify-content-between ms-3">
-        <form v-show="isActive" action="">
-          <input type="text" class="input-text" placeholder="Digite um produto...">
+        <form id="formSearch" v-show="isActive" action="">
+          <input type="text" class="input-text" size="110" placeholder="Digite um produto...">
         </form>
         <i id="icon-search" class="bi bi-search align-self-end" @click="clickSearch()"></i>
       </div>
@@ -59,6 +59,10 @@ export default {
 <style scoped>
 #text-title {
   max-height: 28px;
+}
+
+input {
+  width: 100%;
 }
 
 #icon-search {
