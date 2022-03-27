@@ -82,3 +82,8 @@ p {
     -webkit-touch-callout:none;
     -ms-user-select:none;
 }
+
+.font-bold {
+    font-family: 'Segoe UI Bold';
+    font-size: 15px;
+  }

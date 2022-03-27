@@ -16,21 +16,25 @@
       <div class="col"></div>
 
     </div>
+
+    <AppFooter class="mt-4"/>
   </div>
 
 </template>
 
 <script>
-  import SliderTop from "@/components/SliderTop.vue";
+  import SliderTop from "@/components/shared/SliderTop.vue";
   import ProductList from '@/components/ProductList'
   import LeftBar from '@/components/left-bar/LeftBar'
+  import AppFooter from '@/components/shared/footer/AppFooter'
 
   export default {
     name: "App",
     components: {
       SliderTop,
       ProductList,
-      LeftBar
+      LeftBar,
+      AppFooter
     },
   };
 </script>

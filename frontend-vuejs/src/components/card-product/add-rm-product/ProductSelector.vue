@@ -5,14 +5,14 @@
 
       <div class="">
         <div v-if="showBtnMinus" class="d-flex">
-          <div class="btn-yellow btn-select-minus">
+          <div class="btn-yellow btn-select-minus" :title="rm">
             <p class="fs-2 btn-minus dis-text-select">-</p>
           </div>
-          <div class="btn-yellow btn-select-plus2">
+          <div class="btn-yellow btn-select-plus2" :title="add">
             <p class="fs-4 btn-plus dis-text-select">+</p>
           </div>
         </div>
-        <div v-else class="btn-yellow btn-select-plus">
+        <div v-else class="btn-yellow btn-select-plus" :title="add">
             <p class="fs-4 btn-plus dis-text-select">+</p>
         </div>
       </div>
@@ -32,7 +32,9 @@ export default {
   data() {
     return {
       showBtnMinus: true,
-      qtdAdd: "02"
+      qtdAdd: "02",
+      add: "Adicionar",
+      rm: "Remover"
     };
   },
   props: {},
