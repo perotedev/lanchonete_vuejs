@@ -1,15 +1,15 @@
 <template>
   <section>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" :data-bs-interval="interval">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img :src="source1" class="d-block w-100" alt="Bem Vindo à Sua Nova Hamburgueria">
+          <img :src="images.source1" class="d-block w-100" alt="Bem Vindo à Sua Nova Hamburgueria">
         </div>
         <div class="carousel-item">
-          <img :src="source2" class="d-block w-100" alt="Drink Michigan Beer">
+          <img :src="images.source2" class="d-block w-100" alt="Drink Michigan Beer">
         </div>
         <div class="carousel-item">
-          <img :src="source3" class="d-block w-100" alt="Conheça a Trajetória da Duc Lanches">
+          <img :src="images.source3" class="d-block w-100" alt="Conheça a Trajetória da Duc Lanches">
         </div>
       </div>
       <div class="carousel-indicators">
@@ -18,30 +18,34 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="rounded-circle" aria-label="Slide 3"></button>
       </div>
     </div>
-
   </section>
 </template>
 
 <script>
+
 export default {
   name: "SliderTop",
   created() {},
   mounted() {},
   data() {
     return {
-      source1: "../img/banners/grupo-mascara-7.png",
-      source2: "../img/banners/grupo-mascara-9.png",
-      source3: "../img/banners/grupo-mascara-10.png"
+      images: {
+        source1: "../img/banners/grupo-mascara-7.png",
+        source2: "../img/banners/grupo-mascara-9.png",
+        source3: "../img/banners/grupo-mascara-10.png",
+      },
+      interval: 4000
     };
   },
   props: {},
-  methods: {},
+  methods: {
+  },
 };
 </script>
 
 <style scoped>
 .carousel-indicators {
-  margin-top: 10px;
+  margin-top: 12px;
   position: relative;
 }
  
