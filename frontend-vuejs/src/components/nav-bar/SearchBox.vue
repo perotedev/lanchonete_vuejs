@@ -1,11 +1,14 @@
 <template>
   <div>
     <div class="d-flex">
-      <div class="text-start title-search me-3"> 
+      <div v-show="!isActive" id="text-title" class="text-start fade-in me-3"> 
         <p><span class="f-title">Você pode pesquisar</span> <br>todos os produtos </p>
       </div>
-      <div id="box-search" class="text-end" @click="clickSearch()">
-        <i class="bi bi-search icon-search"></i>
+      <div id="box-search" class="text-end fade-in d-flex justify-content-between">
+        <form v-show="isActive" action="">
+          <input type="text" class="input-text" placeholder="Digite um produto...">
+        </form>
+        <i id="icon-search" class="bi bi-search align-self-end" @click="clickSearch()"></i>
       </div>
     </div>
   </div>
@@ -24,23 +27,46 @@ export default {
   methods: {
     clickSearch(){
       this.isActive = !this.isActive;
+      this.changeBoxSize();
+    },
+    changeBoxSize(){
+      if (this.isActive){
+        document.getElementById("box-search").style.width = "250px";
+        document.getElementById("icon-search").style.right = "7px";
+      } else {
+        document.getElementById("box-search").style.width = "28px";
+        document.getElementById("icon-search").style.right = "-7px";
+      }
     }
   },
 };
 </script>
 
 <style scoped>
-.icon-search {
-  margin-right: 6px;
+#text-title {
+  max-height: 28px;
+}
+
+#icon-search {
+  cursor: pointer;
+  position: relative;
+  right: -7px;
+  top: -5px;
 }
 
 #box-search {
-  cursor: pointer;
   padding-top: 2px;
   border: 1px solid white;
   border-radius: 14px;
   width: 28px;
   height: 28px;
+  transition-duration: 200ms;
+
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
 }
 
 #box-search:hover {
@@ -49,14 +75,60 @@ export default {
   transition-duration: 200ms;
 }
 
-#box-serach:active {
-  width: 200px;
-  transition-duration: 200ms;
-}
-
-.title-search {
+#title-search {
   position: relative;
   top: -4px;
+  max-height: 28px;
+}
+
+.input-text {
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin-left: 7px;
+}
+
+.input-text:focus {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+.fade-in {
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 </style>

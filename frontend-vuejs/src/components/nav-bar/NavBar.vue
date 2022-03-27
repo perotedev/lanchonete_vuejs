@@ -2,11 +2,11 @@
   <div>
     <div class="row w-100">
       <div class="col-12 col-lg-1"></div>
-      <div class="col-12 col-lg-2">
+      <div class="col-12 col-lg-3">
         <SearchBox />
       </div>
       
-      <div class="col-12 col-lg-8 d-flex justify-content-end">
+      <div class="col-12 col-lg-7 d-flex justify-content-end">
         <NavBarMenu :menuItems="menuItems"/>
         <div class="btn-filter ms-4" title="Filtrar Produtos">
           <i class="bi bi-sliders2"></i>
