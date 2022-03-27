@@ -45,8 +45,12 @@ export default {
     selectNewPage(value){
       if (value != this.pageSelected){
         this.pageSelected = value;
-        window.scrollTo(0,200)
         this.isNotCart = value != 2;
+        if (this.isNotCart){
+          window.scrollTo(0,200)
+        } else {
+          window.scrollTo(0,133)
+        }
 
         switch (value){
           case 0: 

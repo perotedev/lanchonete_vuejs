@@ -1,6 +1,6 @@
 <template>
-  <div class="px-4">
-    <div class="mb-4 bg-card-cart product-card d-flex justify-content-between">
+  <div class="px-4 pb-2">
+    <div class="mb-2 bg-card-cart product-card d-flex justify-content-between">
       <div class="row ps-2 align-items-center product-description">
         <div class="col-2">
           <AddRmSelector />
@@ -53,7 +53,7 @@ export default {
 
 <style scoped>
 .product-card {
-  height: 150px;
+  height: 140px;
 }
 
 .product-description {
@@ -74,6 +74,8 @@ export default {
   background-color: #F12446;
   height: 25px;
   width: 25px;
+  margin-top: 20px;
+  margin-right: 12px;
 }
 
 .btn-exclude:hover {
