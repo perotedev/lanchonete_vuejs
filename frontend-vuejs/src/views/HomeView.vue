@@ -1,12 +1,12 @@
 <template>
-  <div class="home">
-    <NavBar class="pt-3" :typeProduct="pageSelected"/>
+  <div>
+    <NavBar v-show="isNotCart" class="pt-3 fade-out" :typeProduct="pageSelected"/>
 
     <div class="row mt-4">
       <div class="col"></div>
       
-      <div class="col-12 col-lg-1">
-        <LeftBar @change-page="selectNewPage" :pageSelected="pageSelected"/>
+      <div class="col-12 col-lg-1 fade-in">
+        <LeftBar id="left-bar" @change-page="selectNewPage" :pageSelected="pageSelected"/>
       </div>
 
       
@@ -36,7 +36,8 @@ export default {
   },
   data() {
     return {
-        pageSelected: 0
+        pageSelected: 0,
+        isNotCart: true
     };
   },
   props: {},
@@ -45,6 +46,7 @@ export default {
       if (value != this.pageSelected){
         this.pageSelected = value;
         window.scrollTo(0,200)
+        this.isNotCart = value != 2;
 
         switch (value){
           case 0: 
@@ -66,5 +68,7 @@ export default {
 </script>
 
 <style scoped>
-
+#left-bar {
+  transition-duration: 200ms;
+}
 </style>

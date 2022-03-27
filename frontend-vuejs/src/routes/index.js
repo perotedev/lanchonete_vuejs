@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import AppHome from '@/views/HomeView.vue'
 import ProductsView from '@/views/ProductsView.vue'
 import PageNotFound from '@/views/PageNotFound'
+import CartView from '@/views/CartView'
 
 const routes = [
     {
@@ -13,13 +14,13 @@ const routes = [
                 path: '/Products',
                 name: 'Products',
                 component: ProductsView,
+            },
+            {
+                path: '/Cart',
+                name: 'Cart',
+                component: CartView
             }
         ]
-    },
-    {
-        path: '/Cart',
-        name: 'Cart',
-        component: () => import(/* webpackChunkName: "Cart" */ '../views/CartView.vue')
     },
     {
         path: '/:pathMatch(.*)*',
