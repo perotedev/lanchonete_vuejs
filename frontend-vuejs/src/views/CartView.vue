@@ -1,12 +1,17 @@
 <template>
   <div>
-    <h1>Teste</h1>
+    <CartPage />
   </div>
 </template>
 
 <script>
+import CartPage from '@/components/cart/CartPage'
+
 export default {
   name: "CartView",
+  components: {
+    CartPage
+  },
   created() {},
   data() {
     return {};

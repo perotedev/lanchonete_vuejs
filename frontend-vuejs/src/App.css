@@ -37,9 +37,18 @@ p {
     padding-right: 10px;
 }
 
+.bg-card-cart .price {
+    background-color: #323136;
+}
+
 .bg-card-product {
     background-color: #323136;
     box-shadow: black 0px 5px 1px;
+}
+
+.bg-card-cart {
+    background-color: #232227;
+    border-bottom: solid 3px black;
 }
 
 .btn-yellow {
