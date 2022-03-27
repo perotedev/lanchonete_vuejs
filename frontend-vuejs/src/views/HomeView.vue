@@ -44,7 +44,8 @@ export default {
     selectNewPage(value){
       if (value != this.pageSelected){
         this.pageSelected = value;
-        
+        window.scrollTo(0,200)
+
         switch (value){
           case 0: 
             router.push({name: 'Products', query: {type: 'food'}})

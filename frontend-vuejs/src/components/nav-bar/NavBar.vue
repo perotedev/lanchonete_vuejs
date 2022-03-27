@@ -7,7 +7,8 @@
       </div>
       
       <div class="col-12 col-lg-7 mb-2">
-        <NavBarMenu :menuItems="menuBurger[typeProduct]"/>
+        <NavBarMenu v-if="typeProduct==1" :menuItems="menuBurger[typeProduct]"/>
+        <NavBarMenu v-else :menuItems="menuBurger[typeProduct]"/>
       </div>
       <div class="col-12 col-lg-1"></div>
     </div>

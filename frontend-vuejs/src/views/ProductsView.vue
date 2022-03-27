@@ -1,11 +1,13 @@
 <template>
   <div>
-    <ProductList :productPageId="productPageId"/>
+    <ProductList v-if="productPageId==1" :productPageId="productPageId"/>
+    <ProductList v-else :productPageId="productPageId"/>
   </div>
 </template>
 
 <script>
 import ProductList from '@/components/shared/ProductList'
+// import { watchEffect } from "vue";
 
 export default {
   name: "ProductsView",
@@ -19,6 +21,11 @@ export default {
     return {
       productPageId: Number
     };
+  },
+  watch: {
+    $route (value) {
+      this.setProductId(value.query.type);
+    }  
   },
   props: {},
   methods: {
@@ -35,4 +42,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+
+</style>
