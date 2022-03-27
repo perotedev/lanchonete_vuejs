@@ -5,7 +5,7 @@
         <img class="img-card" :src="imgProduct" :alt="titleProduct"/>
       </div>
 
-      <div class="col-8 text-start">
+      <div class="col-8 text-start dis-text-select">
         <p class="f-title">{{ titleProduct }}</p>
         <p class="mt-1 text-description">{{ descriptionProduct }}</p>
         <PriceProduct  :price="price" :promotion="promotion"/>

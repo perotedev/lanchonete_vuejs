@@ -6,14 +6,14 @@
       <div class="">
         <div v-if="showBtnMinus" class="d-flex">
           <div class="btn-yellow btn-select-minus">
-            <p class="fs-2 btn-minus">-</p>
+            <p class="fs-2 btn-minus dis-text-select">-</p>
           </div>
           <div class="btn-yellow btn-select-plus2">
-            <p class="fs-4 btn-plus">+</p>
+            <p class="fs-4 btn-plus dis-text-select">+</p>
           </div>
         </div>
         <div v-else class="btn-yellow btn-select-plus">
-            <p class="fs-4 btn-plus">+</p>
+            <p class="fs-4 btn-plus dis-text-select">+</p>
         </div>
       </div>
     </div>

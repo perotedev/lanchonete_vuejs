@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row px-4">
-      <div class="col-12 col-lg-6" v-for="(element, index) in list" :key="index">
+      <div class="col-12 col-md-6 col-xxl-4" v-for="(element, index) in list" :key="index">
         <CardView />
       </div>
     </div>

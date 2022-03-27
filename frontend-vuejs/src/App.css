@@ -44,8 +44,19 @@ p {
     background-color: #FFBC00;
 }
 
+.btn-yellow:hover {
+    background-color: #F9A332;
+    transition-duration: 200ms;
+}
+
+.btn-yellow:active {
+    background-color: white;
+    transition-duration: 100ms;
+}
+
 .btn-yellow-selected {
     background-color: white;
+    border: solid 4px #FFBC00;
 }
 
 .rad-5 {
@@ -62,4 +73,12 @@ p {
 
 .rad-12 {
     border-radius: 12px;
+}
+
+.dis-text-select {
+    user-select:none;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -webkit-touch-callout:none;
+    -ms-user-select:none;
 }
