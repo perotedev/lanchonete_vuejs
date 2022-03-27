@@ -5,40 +5,56 @@
 
       <div class="">
         <div v-if="showBtnMinus" class="d-flex">
-          <div class="btn-yellow btn-select-minus d-flex justify-content-center align-items-center" :title="rm">
+          <div @click="showToast(actionRm)" class="btn-yellow btn-select-minus d-flex justify-content-center align-items-center" :title="rm">
             <p class="fs-4 btn-minus dis-text-select">-</p>
           </div>
-          <div class="btn-yellow btn-select-plus2 d-flex justify-content-center align-items-center" :title="add">
+          <div @click="showToast(actionAdd)" class="btn-yellow btn-select-plus2 d-flex justify-content-center align-items-center" :title="add">
             <p class="fs-5 btn-plus dis-text-select">+</p>
           </div>
         </div>
-        <div v-else class="btn-yellow btn-select-plus d-flex justify-content-center align-items-center" :title="add">
+        <div v-else @click="showToast(actionAdd)" class="btn-yellow btn-select-plus d-flex justify-content-center align-items-center" :title="add">
           <p class="fs-5 btn-plus dis-text-select">+</p>
         </div>
       </div>
     </div>
+
+    <ToastMessage ref="appToast"/>
   </div>
 </template>
 
 <script>
 import CartQtd from '@/components/card-product/add-rm-product/CartQtd'
+import ToastMessage from '@/components/shared/ToastMessage'
 
 export default {
   name: "ProductSelector",
   components: {
-    CartQtd
+    CartQtd,
+    ToastMessage
   },
   created() {},
   data() {
     return {
-      showBtnMinus: true,
+      showBtnMinus: false,
       qtdAdd: "02",
       add: "Adicionar",
-      rm: "Remover"
+      rm: "Remover",
+      actionAdd: "adicionou ao",
+      actionRm: "removeu do"
     };
   },
-  props: {},
-  methods: {},
+  props: {
+    productName: String
+  },
+  methods: {
+    showToast(action){
+      this.$refs.appToast.setToastMessage(
+        "Olá, tudo bem?",
+        "Você "+action+" carrinho o produto \""+this.productName+"\"!"
+      );
+      this.$refs.appToast.showToast();
+    }
+  },
 };
 </script>
 

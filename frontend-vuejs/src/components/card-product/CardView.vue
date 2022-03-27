@@ -11,7 +11,7 @@
         <PriceProduct  :price="price" :promotion="promotion"/>
       </div>
     </div>
-    <ProductSelector />
+    <ProductSelector :productName="titleProduct"/>
   </div>
 </template>
 
