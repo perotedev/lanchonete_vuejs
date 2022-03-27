@@ -2,6 +2,8 @@
   <div class="bg-project">
     <SliderTop />
 
+    <NavBar class="pt-3"/>
+
     <div class="row mt-4">
       <div class="col"></div>
       
@@ -26,6 +28,7 @@
   import ProductList from '@/components/ProductList'
   import LeftBar from '@/components/left-bar/LeftBar'
   import AppFooter from '@/components/shared/footer/AppFooter'
+  import NavBar from '@/components/nav-bar/NavBar'
 
   export default {
     name: "App",
@@ -33,7 +36,8 @@
       SliderTop,
       ProductList,
       LeftBar,
-      AppFooter
+      AppFooter,
+      NavBar
     },
     methods: {}
   };

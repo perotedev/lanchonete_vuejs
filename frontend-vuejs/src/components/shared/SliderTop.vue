@@ -50,8 +50,8 @@ export default {
 }
  
 .carousel-indicators button {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   background-color: #232227;
   border: solid 1px #FFBC00;
   margin-left: 10px;
