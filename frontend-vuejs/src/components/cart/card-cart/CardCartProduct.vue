@@ -10,13 +10,13 @@
         </div>
 
         <div class="col-6 text-start dis-text-select">
-          <p class="f-title">{{ 'Nome do Produto' }}</p>
+          <p class="f-title">{{ product.titleProduct }}</p>
           <p class="mt-1 text-description">{{ product.descriptionProduct }}</p>
           <PriceProduct  :price="product.price" :promotion="product.promotion"/>
         </div>
       </div>
       <div>
-        <button class="btn-exclude rad-8 d-flex justify-content-center">
+        <button class="btn-exclude rad-8 d-flex justify-content-center" :title="'Remover Todos os '+product.titleProduct">
           <i class="icon-x bi bi-x fs-5 align-self-center"></i>
         </button>
       </div>

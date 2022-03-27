@@ -8,7 +8,7 @@
         <form id="formSearch" v-show="isActive" action="">
           <input type="text" class="input-text" size="110" placeholder="Digite um produto...">
         </form>
-        <i id="icon-search" class="bi bi-search align-self-end" @click="clickSearch()"></i>
+        <i id="icon-search" class="bi bi-search align-self-end" @click="clickSearch()" title="Pesquisar Produto"></i>
       </div>
     </div>
   </div>

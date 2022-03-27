@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="h-100 d-flex align-items-center flex-column">
-      <button class="btn-plus-minus btn-yellow rad-8 mb-1 d-flex align-items-center">
+      <button class="btn-plus-minus btn-yellow rad-8 mb-1 d-flex align-items-center" title="Adicionar Produto">
         <p class="fs-4 btn-plus w-100 align-self-center dis-text-select">+</p>
       </button>
 
@@ -9,7 +9,7 @@
         <p class="f-title p-1 dis-text-select">{{ qtdAdd }}</p>
       </div>
 
-      <button class="btn-plus-minus btn-yellow rad-8 d-flex align-items-center">
+      <button class="btn-plus-minus btn-yellow rad-8 d-flex align-items-center" title="Remover Produto">
         <p id="minus-cart" class="fs-3 w-100 btn-minus align-self-center dis-text-select">-</p>
       </button>
     </div>

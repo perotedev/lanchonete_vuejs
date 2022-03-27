@@ -12,9 +12,13 @@
     </div>
     
     <div class="row">
-      <div class="col-12 col-lg-6 mt-3 pt-3 text-start ps-5">
-        <btn v-show="haveProduct" class="btn-exclude-all rad-10 f-title px-3 py-2">
-          Limpar Carrinho
+      <div class="col-12 col-lg-6 mt-1 pt-3 text-start ps-5 d-flex justify-content-center">
+        <btn v-show="haveProduct" class="btn-exclude-all rad-10 f-title px-3 py-2" title="Limpar Carrinho">
+          <i class="bi bi-trash me-1"></i> Limpar Carrinho
+        </btn>
+
+        <btn v-show="haveProduct" class="btn-buy ms-3 rad-10 f-title px-3 py-2" title="Finalizar Pedido">
+          <i class="bi bi-cart me-1"></i> Finalizar Pedido
         </btn>
       </div>
 
@@ -68,10 +72,25 @@ export default {
   color: white;
   cursor: pointer;
   background-color: #F12446;
+  max-height: 40px;
 }
 
 .btn-exclude-all:hover {
   background-color: #F5435C;
+  transition-duration: 200ms;
+} 
+
+.btn-buy {
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  background-color: #059862;
+  max-height: 40px;
+}
+
+.btn-buy:hover {
+  background-color: #37B08A;
   transition-duration: 200ms;
 } 
 </style>
