@@ -8,8 +8,8 @@
       
       <div class="col-2"></div>
       <div class="col-12 col-lg-8 d-flex">
-        <img :src="imgPaymentsRef" alt="Formas de Pagamento">
-        <img :src="imgBarCodeRef" alt="Código de Barras">
+        <img id="payment-methods" :src="imgPaymentsRef" alt="Formas de Pagamento">
+        <img id="bar-code" :src="imgBarCodeRef" alt="Código de Barras">
       </div>
       
       <div class="col"></div>
@@ -20,7 +20,6 @@
 <script>
 export default {
   name: "PaymentMethods",
-  created() {},
   data() {
     return {
       imgPaymentsRef: "../../img/footer/pay-methods@2x.png",
@@ -28,13 +27,21 @@ export default {
     };
   },
   props: {},
-  methods: {},
+  methods: {}
 };
 </script>
 
 <style scoped>
-img {
+#payment-methods {
   max-height: 48px;
   max-width: 329px;
+  height: 100%;
+  width: 100%;
+}
+
+#bar-code {
+  padding-top: 10px;
+  margin-left: 5px;
+  max-height: 40px;
 }
 </style>
