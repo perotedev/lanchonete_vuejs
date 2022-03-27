@@ -2,7 +2,7 @@
   <div>
     <div class="row w-100">
       <div class="col-12 col-lg-1"></div>
-      <div class="col-12 col-lg-3">
+      <div class="col-12 col-lg-3 mb-4">
         <SearchBox />
       </div>
       

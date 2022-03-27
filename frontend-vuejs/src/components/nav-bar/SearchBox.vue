@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="d-flex">
-      <div v-show="!isActive" id="text-title" class="text-start fade-in me-3"> 
+      <div v-show="!isActive" id="text-title" class="text-start fade-in"> 
         <p><span class="f-title">Você pode pesquisar</span> <br>todos os produtos </p>
       </div>
-      <div id="box-search" class="text-end fade-in d-flex justify-content-between">
+      <div id="box-search" class="text-end fade-in d-flex justify-content-between ms-3">
         <form v-show="isActive" action="">
           <input type="text" class="input-text" placeholder="Digite um produto...">
         </form>
@@ -17,7 +17,10 @@
 <script>
 export default {
   name: "SearchBox",
-  created() {},
+  mounted() {
+    this.resizeSearchBox();
+    window.addEventListener("resize", this.resizeSearchBox);
+  },
   data() {
     return {
       isActive: false
@@ -31,14 +34,23 @@ export default {
     },
     changeBoxSize(){
       if (this.isActive){
-        document.getElementById("box-search").style.width = "250px";
+        document.getElementById("box-search").style.width = "100%";
         document.getElementById("icon-search").style.right = "7px";
       } else {
         document.getElementById("box-search").style.width = "28px";
         document.getElementById("icon-search").style.right = "-7px";
       }
+    },
+    resizeSearchBox(){
+      if (window.innerWidth < 959){
+        this.isActive = true;
+        this.changeBoxSize();
+      } else {
+        this.isActive = false;
+        this.changeBoxSize();
+      }
     }
-  },
+  }
 };
 </script>
 
