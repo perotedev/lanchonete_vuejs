@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <ToastMessage ref="appToast"/>
+    <ToastMessage ref="footerToast" toastId="toastFooter"/>
   </div>
 </template>
 
@@ -60,11 +60,11 @@ export default {
   methods: {
     sumbitForm(e){
       e.preventDefault();
-      this.$refs.appToast.setToastMessage(
+      this.$refs.footerToast.setToastMessage(
         "Olá, tudo bem?",
         "Seu email foi cadastrado com sucesso para receber ofertas exclusivas."
       );
-      this.$refs.appToast.showToast();
+      this.$refs.footerToast.showToast();
     }
   },
 };

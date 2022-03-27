@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <ToastMessage ref="appToast"/>
+    <ToastMessage ref="cartToast" :toastId="'toast'+productId"/>
   </div>
 </template>
 
@@ -35,7 +35,7 @@ export default {
   created() {},
   data() {
     return {
-      showBtnMinus: false,
+      showBtnMinus: true,
       qtdAdd: "02",
       add: "Adicionar",
       rm: "Remover",
@@ -44,15 +44,16 @@ export default {
     };
   },
   props: {
-    productName: String
+    productName: String,
+    productId: String
   },
   methods: {
     showToast(action){
-      this.$refs.appToast.setToastMessage(
+      this.$refs.cartToast.setToastMessage(
         "Olá, tudo bem?",
-        "Você "+action+" carrinho o produto \""+this.productName+"\"!"
+        "Você "+action+" carrinho o produto "+this.productName+"!"
       );
-      this.$refs.appToast.showToast();
+      this.$refs.cartToast.showToast();
     }
   },
 };

@@ -2,16 +2,16 @@
   <div class="mb-3 rad-12 bg-card-product product-card d-flex justify-content-between">
     <div class="row ps-2 align-items-center product-description">
       <div class="col-4">
-        <img class="img-card" :src="imgProduct" :alt="titleProduct"/>
+        <img class="img-card" :src="product.imgProduct" :alt="product.titleProduct"/>
       </div>
 
       <div class="col-8 text-start dis-text-select">
-        <p class="f-title">{{ titleProduct }}</p>
-        <p class="mt-1 text-description">{{ descriptionProduct }}</p>
-        <PriceProduct  :price="price" :promotion="promotion"/>
+        <p class="f-title">{{ product.titleProduct }}</p>
+        <p class="mt-1 text-description">{{ product.descriptionProduct }}</p>
+        <PriceProduct  :price="product.price" :promotion="product.promotion"/>
       </div>
     </div>
-    <ProductSelector :productName="titleProduct"/>
+    <ProductSelector :productName="product.titleProduct" :productId="product.id"/>
   </div>
 </template>
 
@@ -25,22 +25,19 @@ export default {
     PriceProduct,
     ProductSelector
   },
-  created() {},
-  mounted() {
-    setTimeout(() => {
-      console.log("Time Out")
-    }, 1000);
-  },
   data() {
-    return {
-      imgProduct: "../img/burgers/burger.png",
-      titleProduct: "Hamburguer Artesanal",
-      descriptionProduct: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-      price: 12.57,
-      promotion: false
-    };
+    return {};
   },
-  props: {},
+  props: {
+    product: {
+      id: String,
+      imgProduct: String,
+      titleProduct: String,
+      descriptionProduct: String,
+      price: Number,
+      promotion: Boolean
+    }
+  },
   methods: {},
 };
 </script>

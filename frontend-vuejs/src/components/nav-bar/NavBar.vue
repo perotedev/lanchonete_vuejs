@@ -7,7 +7,7 @@
       </div>
       
       <div class="col-12 col-lg-7">
-        <NavBarMenu :menuItems="menuBurger"/>
+        <NavBarMenu :menuItems="menuBurger[typeProduct]"/>
       </div>
       <div class="col-12 col-lg-1"></div>
     </div>
@@ -17,6 +17,7 @@
 <script>
 import NavBarMenu from '@/components/nav-bar/NavBarMenu'
 import SearchBox from '@/components/nav-bar/SearchBox'
+import { ProductCategories } from '@/data/fake-categories.js'
 
 export default {
   name: "NavBar",
@@ -27,7 +28,7 @@ export default {
   created() {},
   data() {
     return {
-      menuBurger: ["Sanduíches", "Pastas", "Saladas", "Sorvetes", "Bolos", "Salgados"]
+      menuBurger: ProductCategories.getCategories()
     };
   },
   props: {

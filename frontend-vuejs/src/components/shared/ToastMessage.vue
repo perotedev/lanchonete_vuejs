@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div :id="toastId" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header border-bottom">
           <img :src="imgIconRef" class="me-2" alt="Ícone Hamburguer">
           <strong class="me-auto f-title">{{ title }}</strong>
@@ -29,7 +29,9 @@ export default {
       textMessage: ""
     };
   },
-  props: {},
+  props: {
+    toastId:String
+  },
   methods: {
     getNowTime(){
       let time = new Date();
@@ -41,9 +43,9 @@ export default {
       this.timeMessage = this.getNowTime();
     },
     showToast(){
-      let toastLiveExample = document.getElementById('liveToast')
+      let toastLiveExample = document.getElementById(this.toastId)
       let toast = new bootstrap.Toast(toastLiveExample);
-      toast.show()
+      toast.show();
     }
   },
 };
