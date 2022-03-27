@@ -16,9 +16,9 @@
         </div>
       </div>
       <div>
-        <div class="btn-exclude rad-8">
-          <i class="icon-x bi bi-x fs-5"></i>
-        </div>
+        <button class="btn-exclude rad-8 d-flex justify-content-center">
+          <i class="icon-x bi bi-x fs-5 align-self-center"></i>
+        </button>
       </div>
     </div>
   </div>
@@ -70,12 +70,16 @@ export default {
 }
 
 .btn-exclude {
+  border: none;
+  outline: none;
+  color: white;
   cursor: pointer;
   background-color: #F12446;
   height: 25px;
   width: 25px;
   margin-top: 20px;
   margin-right: 12px;
+  padding-top: 6px;
 }
 
 .btn-exclude:hover {

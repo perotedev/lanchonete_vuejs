@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="h-100 d-flex align-items-center flex-column">
-      <div class="btn-plus-minus btn-yellow rad-8 mb-1">
-        <p class="fs-4 btn-plus dis-text-select">+</p>
-      </div>
+      <button class="btn-plus-minus btn-yellow rad-8 mb-1 d-flex align-items-center">
+        <p class="fs-4 btn-plus w-100 align-self-center dis-text-select">+</p>
+      </button>
 
       <div class="qtd-cart rad-8 mb-1">
-        <p class="f-title p-1">{{ qtdAdd }}</p>
+        <p class="f-title p-1 dis-text-select">{{ qtdAdd }}</p>
       </div>
 
-      <div class="btn-plus-minus btn-yellow rad-8 d-flex align-items-center">
+      <button class="btn-plus-minus btn-yellow rad-8 d-flex align-items-center">
         <p id="minus-cart" class="fs-3 w-100 btn-minus align-self-center dis-text-select">-</p>
-      </div>
+      </button>
     </div>
   </div>
 </template>
@@ -32,12 +32,12 @@ export default {
 <style scoped>
 .btn-plus {
   position: relative;
-  top: -5px;
+  top: -3px;
 }
 
 .btn-minus {
   position: relative;
-  top: -2px;
+  top: -3px;
 }
 
 .btn-plus-minus {

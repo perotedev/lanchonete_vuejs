@@ -5,16 +5,16 @@
 
       <div class="">
         <div v-if="showBtnMinus" class="d-flex">
-          <div @click="showToast(actionRm)" class="btn-yellow btn-select-minus d-flex justify-content-center align-items-center" :title="rm">
+          <button @click="showToast(actionRm)" class="btn-yellow btn-select-minus d-flex justify-content-center align-items-center" :title="rm">
             <p class="fs-4 btn-minus dis-text-select">-</p>
-          </div>
-          <div @click="showToast(actionAdd)" class="btn-yellow btn-select-plus2 d-flex justify-content-center align-items-center" :title="add">
+          </button>
+          <button @click="showToast(actionAdd)" class="btn-yellow btn-select-plus2 d-flex justify-content-center align-items-center" :title="add">
             <p class="fs-5 btn-plus dis-text-select">+</p>
-          </div>
+          </button>
         </div>
-        <div v-else @click="showToast(actionAdd)" class="btn-yellow btn-select-plus d-flex justify-content-center align-items-center" :title="add">
+        <button v-else @click="showToast(actionAdd)" class="btn-yellow btn-select-plus d-flex justify-content-center align-items-center" :title="add">
           <p class="fs-5 btn-plus dis-text-select">+</p>
-        </div>
+        </button>
       </div>
     </div>
 

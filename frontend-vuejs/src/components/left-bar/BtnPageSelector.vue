@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div v-if="selected" class="btn-yellow-selected btn-page-selected rounded-circle" :title="iconName">
+    <button v-if="selected" class="btn-yellow-selected btn-page-selected rounded-circle" :title="iconName">
       <img class="img-selected" :src="iconRef" :alt="iconName">
-    </div>
-    <div v-else class="btn-yellow btn-page rounded-circle" :title="iconName">
+    </button>
+    <button v-else class="btn-yellow btn-page rounded-circle" :title="iconName">
       <img :src="iconRef" :alt="iconName">
-    </div>
+    </button>
   </div>
 </template>
 
@@ -39,14 +39,13 @@ img {
 
 .btn-page {
   margin-top: 8px;
-  padding-top: 10px;
+  padding-top: 3px;
   width: 45px;
   height: 45px;
   cursor: pointer;
 }
 
 .btn-page-selected {
-  padding-top: 10px;
   width: 60px;
   height: 60px;
   cursor: pointer;

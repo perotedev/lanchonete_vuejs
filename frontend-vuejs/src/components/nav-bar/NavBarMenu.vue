@@ -7,9 +7,9 @@
           <p v-else>{{ item }}</p>
         </ul>
       </li>
-      <div class="btn-filter ms-4" title="Filtrar Produtos">
+      <button class="btn-filter ms-4" title="Filtrar Produtos">
           <i class="bi bi-sliders2"></i>
-      </div>
+      </button>
     </div>
   </div>
 </template>
@@ -68,12 +68,15 @@ ul:hover {
 }
 
 .btn-filter {
-  padding-top: 3px;
+  padding-top: 1px;
   cursor: pointer;
   width: 28px;
   height: 28px;
+  background-color: transparent;
+  color:  white;
   border: solid 1px white;
   border-radius: 10px;
+
 }
 
 .btn-filter:hover {

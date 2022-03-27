@@ -53,6 +53,8 @@ p {
 
 .btn-yellow {
     background-color: #FFBC00;
+    border: none;
+    outline: none;
 }
 
 .btn-yellow:hover {
