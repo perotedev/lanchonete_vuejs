@@ -8,12 +8,12 @@
           <div class="btn-yellow btn-select-minus d-flex justify-content-center align-items-center" :title="rm">
             <p class="fs-4 btn-minus dis-text-select">-</p>
           </div>
-          <div class="btn-yellow btn-select-plus2" :title="add">
-            <i class="bi bi-plus btn-plus fs-5"></i>
+          <div class="btn-yellow btn-select-plus2 d-flex justify-content-center align-items-center" :title="add">
+            <p class="fs-5 btn-plus dis-text-select">+</p>
           </div>
         </div>
-        <div v-else class="btn-yellow btn-select-plus" :title="add">
-          <i class="bi bi-plus btn-plus fs-5"></i>
+        <div v-else class="btn-yellow btn-select-plus d-flex justify-content-center align-items-center" :title="add">
+          <p class="fs-5 btn-plus dis-text-select">+</p>
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@ export default {
 .btn-plus {
   color: #232227;
   position: relative;
-  top: -3px;
+  top: -2px;
 }
 
 .btn-select-minus {
