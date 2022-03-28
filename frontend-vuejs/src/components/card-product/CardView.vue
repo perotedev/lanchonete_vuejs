@@ -14,6 +14,7 @@
     <ProductSelector 
       :productName="product.titleProduct" 
       :productId="product.id"
+      :qtdAdd="qtdAdd"
       @add-item="addItemToCart"
       @rm-item="removeItemInCart"
     />
@@ -26,13 +27,18 @@ import ProductSelector from '@/components/card-product/add-rm-product/ProductSel
 import jsCookie from 'js-cookie'
 
 export default {
+  mounted() {
+    this.checkCountInCart();
+  },
   name: "CardView",
   components: {
     PriceProduct,
     ProductSelector
   },
   data() {
-    return {};
+    return {
+      qtdAdd:Number
+    };
   },
   props: {
     product: {
@@ -50,7 +56,8 @@ export default {
       product.count = 1;
       let array = jsCookie.get('appCart');
       if (array == undefined || array == null || array.length == 0){
-          jsCookie.set('appCart', JSON.stringify([product]));
+        jsCookie.set('appCart', JSON.stringify([product]));
+        this.qtdAdd = 1;
         console.log(JSON.parse(jsCookie.get('appCart')))
       } else {
         this.addCookieItem(product);
@@ -64,12 +71,14 @@ export default {
         if(array[i].id == newItem.id){
           isInCart = true;
           array[i].count++;
+          this.qtdAdd = array[i].count;
           break;
         }
       }
 
       if (!isInCart){
         array.push(newItem);
+        this.qtdAdd = 1;
       }
       console.log(array);
       jsCookie.set('appCart', JSON.stringify(array));
@@ -83,8 +92,10 @@ export default {
         if(array[i].id == this.product.id){
           if (array[i].count == 1){
             array.splice(i, 1);
+            this.qtdAdd = 0;
           } else {
             array[i].count --;
+            this.qtdAdd = array[i].count;
           }
           break;
         }
@@ -92,6 +103,21 @@ export default {
       console.log(array);
       jsCookie.set('appCart', JSON.stringify(array));
     },
+
+    checkCountInCart(){
+      let array = JSON.parse(jsCookie.get('appCart'));
+      let isInCart = false;
+      for (let i=0; i < array.length; i++){
+        if(array[i].id == this.product.id){
+          isInCart = true;
+          this.qtdAdd = array[i].count;
+          break;
+        }
+      }
+      if (!isInCart){
+        this.qtdAdd = 0;
+      }
+    }
   },
 };
 </script>

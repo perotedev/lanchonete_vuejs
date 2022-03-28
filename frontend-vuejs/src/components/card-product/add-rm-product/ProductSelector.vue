@@ -1,10 +1,11 @@
 <template>
   <div>
     <div class="d-flex flex-column align-items-end h-100 justify-content-between">
-      <CartQtd class="mt-3 me-3" :qtdAdd="qtdAdd"/>
+      <CartQtd v-if="qtdAdd > 0" class="mt-3 me-3" :qtdAdd="getCountString()"/>
+      <div v-else></div>
 
       <div class="">
-        <div v-if="showBtnMinus" class="d-flex">
+        <div v-if="qtdAdd > 0" class="d-flex">
           <button @click="showToast(actionRm), $emit('rm-item')" 
             class="btn-yellow btn-select-minus d-flex justify-content-center align-items-center" :title="rm">
             <p class="fs-4 btn-minus dis-text-select">-</p>
@@ -39,7 +40,6 @@ export default {
   data() {
     return {
       showBtnMinus: true,
-      qtdAdd: "02",
       add: "Adicionar",
       rm: "Remover",
       actionAdd: "adicionou ao",
@@ -48,7 +48,8 @@ export default {
   },
   props: {
     productName: String,
-    productId: String
+    productId: String,
+    qtdAdd: Number
   },
   methods: {
     showToast(action){
@@ -57,6 +58,9 @@ export default {
         "Você "+action+" carrinho o produto "+this.productName+"!"
       );
       this.$refs.cartToast.showToast();
+    },
+    getCountString(){
+      return this.qtdAdd.toString().padStart(2, "0");
     }
   },
   emits: ['add-item', 'rm-item']
