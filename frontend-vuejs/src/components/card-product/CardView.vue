@@ -46,18 +46,32 @@ export default {
   },
   methods: {
     addItemToCart(){
+      let product = this.product;
+      product.count = 1;
       let array = jsCookie.get('appCart');
-      if (array == undefined || array == null){
-          jsCookie.set('appCart', JSON.stringify([this.product]));
+      if (array == undefined || array == null || array.length == 0){
+          jsCookie.set('appCart', JSON.stringify([product]));
+        console.log(JSON.parse(jsCookie.get('appCart')))
       } else {
-        this.addCookieItem();
+        this.addCookieItem(product);
       }
-      console.log(JSON.parse(jsCookie.get('appCart')))
     },
 
-    addCookieItem(){
+    addCookieItem(newItem){
       let array = JSON.parse(jsCookie.get('appCart'));
-      array.push(this.product);
+      let isInCart = false;
+      for (let i=0; i < array.length; i++){
+        if(array[i].id == newItem.id){
+          isInCart = true;
+          array[i].count++;
+          break;
+        }
+      }
+
+      if (!isInCart){
+        array.push(newItem);
+      }
+      console.log(array);
       jsCookie.set('appCart', JSON.stringify(array));
     },
 
@@ -65,14 +79,19 @@ export default {
       // jsCookie.remove('appCart');
       let array = JSON.parse(jsCookie.get('appCart'));
 
-      array.forEach((element, index) => {
-          if (element.id == this.product.id){
-              array.splice(index, 1);
-              return true;
+      for (let i=0; i < array.length; i++){
+        if(array[i].id == this.product.id){
+          if (array[i].count == 1){
+            array.splice(i, 1);
+          } else {
+            array[i].count --;
           }
-      });
+          break;
+        }
+      }
+      console.log(array);
       jsCookie.set('appCart', JSON.stringify(array));
-    }
+    },
   },
 };
 </script>
