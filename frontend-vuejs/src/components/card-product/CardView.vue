@@ -11,13 +11,19 @@
         <PriceProduct  :price="product.price" :promotion="product.promotion"/>
       </div>
     </div>
-    <ProductSelector :productName="product.titleProduct" :productId="product.id"/>
+    <ProductSelector 
+      :productName="product.titleProduct" 
+      :productId="product.id"
+      @add-item="addItemToCart"
+      @rm-item="removeItemInCart"
+    />
   </div>
 </template>
 
 <script>
 import PriceProduct from '@/components/card-product/PriceProduct'
 import ProductSelector from '@/components/card-product/add-rm-product/ProductSelector'
+import jsCookie from 'js-cookie'
 
 export default {
   name: "CardView",
@@ -38,7 +44,36 @@ export default {
       promotion: Boolean
     }
   },
-  methods: {},
+  methods: {
+    addItemToCart(){
+      let array = jsCookie.get('appCart');
+      if (array == undefined || array == null){
+          jsCookie.set('appCart', JSON.stringify([this.product]));
+      } else {
+        this.addCookieItem();
+      }
+      console.log(JSON.parse(jsCookie.get('appCart')))
+    },
+
+    addCookieItem(){
+      let array = JSON.parse(jsCookie.get('appCart'));
+      array.push(this.product);
+      jsCookie.set('appCart', JSON.stringify(array));
+    },
+
+    removeItemInCart(){
+      // jsCookie.remove('appCart');
+      let array = JSON.parse(jsCookie.get('appCart'));
+
+      array.forEach((element, index) => {
+          if (element.id == this.product.id){
+              array.splice(index, 1);
+              return true;
+          }
+      });
+      jsCookie.set('appCart', JSON.stringify(array));
+    }
+  },
 };
 </script>
 

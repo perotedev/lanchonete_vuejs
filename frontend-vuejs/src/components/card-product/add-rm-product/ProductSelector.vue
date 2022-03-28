@@ -5,14 +5,17 @@
 
       <div class="">
         <div v-if="showBtnMinus" class="d-flex">
-          <button @click="showToast(actionRm)" class="btn-yellow btn-select-minus d-flex justify-content-center align-items-center" :title="rm">
+          <button @click="showToast(actionRm), $emit('rm-item')" 
+            class="btn-yellow btn-select-minus d-flex justify-content-center align-items-center" :title="rm">
             <p class="fs-4 btn-minus dis-text-select">-</p>
           </button>
-          <button @click="showToast(actionAdd)" class="btn-yellow btn-select-plus2 d-flex justify-content-center align-items-center" :title="add">
+          <button @click="showToast(actionAdd), $emit('add-item')" 
+            class="btn-yellow btn-select-plus2 d-flex justify-content-center align-items-center" :title="add">
             <p class="fs-5 btn-plus dis-text-select">+</p>
           </button>
         </div>
-        <button v-else @click="showToast(actionAdd)" class="btn-yellow btn-select-plus d-flex justify-content-center align-items-center" :title="add">
+        <button v-else @click="showToast(actionAdd), $emit('add-item')" 
+          class="btn-yellow btn-select-plus d-flex justify-content-center align-items-center" :title="add">
           <p class="fs-5 btn-plus dis-text-select">+</p>
         </button>
       </div>
@@ -56,6 +59,7 @@ export default {
       this.$refs.cartToast.showToast();
     }
   },
+  emits: ['add-item', 'rm-item']
 };
 </script>
 
