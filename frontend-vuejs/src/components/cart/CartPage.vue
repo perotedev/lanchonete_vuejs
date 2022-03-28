@@ -1,8 +1,8 @@
 <template>
   <div>
     <div v-if="haveProduct" class="row cart-products">
-      <div class="col-12 col-md-6 col-xxl-4" v-for="(product, index) in list" :key="index">
-        <CardCartProduct class="fade-in" />
+      <div class="col-12 col-md-6 col-xxl-4" v-for="(product, index) in cartList" :key="index">
+        <CardCartProduct @total-change="refreshTotalSum" :product="product" class="fade-in" />
       </div>
     </div>
     <div v-else class="cart-products pt-5">
@@ -25,7 +25,7 @@
       <div class="col-12 mt-3 mb-3 col-lg-6 d-flex f-title justify-content-end"> 
         <p class="fs-2"> Total:</p>
         <div class="total-box mx-3 px-3 rad-12 text-center">
-          <p class="fs-2">R$ {{ totalCompras }}</p>
+          <p class="fs-2">R$ {{ totalSum }}</p>
         </div>
       </div>
     </div>
@@ -34,25 +34,48 @@
 
 <script>
 import CardCartProduct from '@/components/cart/card-cart/CardCartProduct'
+import jsCookie from 'js-cookie'
 
 export default {
   name: "CartPage",
   components: {
     CardCartProduct
   },
-  created() {},
+  created() {
+    this.cartList = this.getItemsCart();
+    this.getTotalSum();
+  },
   mounted() {
-    this.haveProduct = this.list.length > 0;
+    this.haveProduct = this.cartList.length > 0;
   },
   data() {
     return {
-      list: [1,2,3,4],
-      totalCompras: 22.45,
+      cartList: [],
+      totalSum: "0",
       haveProduct: Boolean
     };
   },
   props: {},
-  methods: {},
+  methods: {
+    getItemsCart(){
+      return JSON.parse(jsCookie.get('appCart'));
+    },
+
+    getTotalSum(){
+      let total = 0;
+      this.cartList.forEach(element => {
+        total += element.price * element.count;
+      });
+      this.totalSum = (Math.round(total * 100) / 100).toFixed(2).toString();
+    },
+
+    refreshTotalSum(){
+      this.totalSum = 0;
+      this.cartList = this.getItemsCart();
+      this.getTotalSum();
+      this.haveProduct = this.cartList.length > 0;
+    }
+  },
 };
 </script>
 

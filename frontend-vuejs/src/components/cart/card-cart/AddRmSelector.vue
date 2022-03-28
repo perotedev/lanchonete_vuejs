@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="h-100 d-flex align-items-center flex-column">
-      <button class="btn-plus-minus btn-yellow rad-8 mb-1 d-flex align-items-center" title="Adicionar Produto">
+      <button @click="$emit('add-item')" class="btn-plus-minus btn-yellow rad-8 mb-1 d-flex align-items-center" title="Adicionar Produto">
         <p class="fs-4 btn-plus w-100 align-self-center dis-text-select">+</p>
       </button>
 
       <div class="qtd-cart rad-8 mb-1">
-        <p class="f-title p-1 dis-text-select">{{ qtdAdd }}</p>
+        <p class="f-title p-1 dis-text-select">{{ getCountString() }}</p>
       </div>
 
-      <button class="btn-plus-minus btn-yellow rad-8 d-flex align-items-center" title="Remover Produto">
+      <button @click="$emit('rm-item')" class="btn-plus-minus btn-yellow rad-8 d-flex align-items-center" title="Remover Produto">
         <p id="minus-cart" class="fs-3 w-100 btn-minus align-self-center dis-text-select">-</p>
       </button>
     </div>
@@ -21,11 +21,17 @@ export default {
   name: "AddRmSelector",
   data() {
     return {
-      qtdAdd: "02"
     };
   },
-  props: {},
-  methods: {},
+  props: {
+    qtdAdd: Number
+  },
+  methods: {
+     getCountString(){
+      return this.qtdAdd.toString().padStart(2, "0");
+    }
+  },
+  emits: ['add-item', 'rm-item']
 };
 </script>
 

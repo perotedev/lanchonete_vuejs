@@ -23,7 +23,7 @@
 <script>
 import NavBar from '@/components/nav-bar/NavBar'
 import LeftBar from '@/components/left-bar/LeftBar'
-import router from '../routes/index'
+import router from '@/routes/index'
 
 export default {
   name: "AppHome",
